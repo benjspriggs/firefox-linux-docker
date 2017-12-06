@@ -23,6 +23,7 @@ RUN apk add --update \
 WORKDIR /src
 
 RUN virtualenv .
+ADD $MOZILLA_CENTRAL .
 RUN tar -xzf $MOZILLA_ARCHIVE && rm $MOZILLA_ARCHIVE
 RUN mv mozilla-central-* mozilla-central
 RUN ls -la
