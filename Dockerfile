@@ -31,6 +31,8 @@ RUN ls -la
 WORKDIR mozilla-central
 
 RUN adduser $DEVUSER -D -s /bin/sh
+# add dev to sudoers
+RUN adduser $DEVUSER sudo
 RUN chpasswd $DEVUSER:$PASSWD
 USER $DEVUSER
 RUN ./mach build
