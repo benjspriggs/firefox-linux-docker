@@ -35,5 +35,7 @@ COPY $MOZILLA_CENTRAL .
 WORKDIR mozilla-central
 
 RUN adduser $DEVUSER -D
+# add dev to sudoers
+RUN adduser $DEVUSER sudo
 RUN chpasswd $DEVUSER:$PASSWD
 USER $DEVUSER
