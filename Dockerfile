@@ -3,6 +3,7 @@ FROM alpine:latest
 
 ENV DEVUSER dev
 ENV PASSWD dev
+ENV SHELL /bin/sh
 ENV MOZILLA_ARCHIVE tip.tar.gz
 ENV MOZILLA_CENTRAL https://hg.mozilla.org/mozilla-central/archive/tip.tar.gz 
 
@@ -30,7 +31,7 @@ RUN ls -la
 
 WORKDIR mozilla-central
 
-RUN adduser $DEVUSER -D -s /bin/sh
+RUN adduser $DEVUSER -D -s $SHELL
 # add dev to sudoers
 RUN echo 'dev ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN chpasswd $DEVUSER:$PASSWD
