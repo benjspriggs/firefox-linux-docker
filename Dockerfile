@@ -30,6 +30,7 @@ RUN ls -la
 
 WORKDIR mozilla-central
 
-RUN adduser $DEVUSER -D
+RUN adduser $DEVUSER -D -s /bin/sh
 RUN chpasswd $DEVUSER:$PASSWD
 USER $DEVUSER
+RUN ./mach build
