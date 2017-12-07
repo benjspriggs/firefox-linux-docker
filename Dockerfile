@@ -32,7 +32,7 @@ WORKDIR mozilla-central
 
 RUN adduser $DEVUSER -D -s /bin/sh
 # add dev to sudoers
-RUN adduser $DEVUSER sudo
+RUN echo 'dev ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN chpasswd $DEVUSER:$PASSWD
 USER $DEVUSER
 RUN ./mach build
