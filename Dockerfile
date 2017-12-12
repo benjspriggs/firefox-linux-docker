@@ -1,5 +1,6 @@
 # ready-to-go Firefox dev environment
-FROM corey/rust-alpine:latest
+FROM rust
+FROM benjspriggs/docker-stretch-dev
 
 ENV DEVUSER dev
 ENV PASSWD dev
@@ -7,19 +8,15 @@ ENV SHELL /bin/sh
 ENV MOZILLA_ARCHIVE tip.tar.gz
 ENV MOZILLA_CENTRAL https://hg.mozilla.org/mozilla-central/archive/tip.tar.gz 
 
-# install mecurial
-RUN apk add --update mercurial
 # install python, pip, virtualenv
-RUN apk add --update \
+RUN apt-get install -y \
       sudo \
-      mercurial \
       python \
       python-dev \
-      py-pip \
-      build-base \
+      python-pip \
       && pip install virtualenv
 
-RUN rm -rf /var/cache/apk/*
+RUN rm -rf /var/cache/apt-get/*
 
 
 WORKDIR /src
@@ -32,10 +29,7 @@ RUN ls -la
 
 WORKDIR mozilla-central
 
-RUN adduser $DEVUSER -D -s $SHELL
-RUN echo $DEVUSER:$PASSWD | chpasswd
-# add dev to sudoers
-RUN echo 'dev ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN ./mach build
 
+# switch to development user
 USER dev
