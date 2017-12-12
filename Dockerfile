@@ -9,10 +9,9 @@ ENV MOZILLA_ARCHIVE tip.tar.gz
 ENV MOZILLA_CENTRAL https://hg.mozilla.org/mozilla-central/archive/tip.tar.gz 
 
 # install python, pip, virtualenv
+RUN apt-get update
 RUN apt-get install -y \
-      sudo \
       python \
-      python-dev \
       python-pip \
       && pip install virtualenv
 
