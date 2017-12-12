@@ -1,6 +1,6 @@
 # ready-to-go Firefox dev environment
-FROM rust
 FROM benjspriggs/docker-stretch-dev
+FROM rust
 
 ENV DEVUSER dev
 ENV PASSWD dev
