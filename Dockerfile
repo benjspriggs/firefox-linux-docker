@@ -5,6 +5,7 @@ FROM rust
 ENV DEVUSER dev
 ENV PASSWD dev
 ENV SHELL /bin/sh
+
 ENV MOZILLA_ARCHIVE tip.tar.gz
 ENV MOZILLA_CENTRAL https://hg.mozilla.org/mozilla-central/archive/tip.tar.gz 
 
@@ -13,10 +14,12 @@ RUN apt-get update
 RUN apt-get install -y \
       python \
       python-pip \
+      libpangocairo-1.0-0 \
+      libpangoft2-1.0-0 \
+      libpango1.0-0 \
       && pip install virtualenv
 
 RUN rm -rf /var/cache/apt-get/*
-
 
 WORKDIR /src
 
