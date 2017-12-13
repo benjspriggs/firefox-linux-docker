@@ -14,9 +14,9 @@ RUN apt-get update
 RUN apt-get install -y \
       python \
       python-pip \
-      libpangocairo-1.0-0 \
-      libpangoft2-1.0-0 \
-      libpango1.0-0 \
+      libpangocairo-1.0-0-dev \
+      libpangoft2-1.0-0-dev \
+      libpango1.0-0-dev \
       && pip install virtualenv
 
 RUN rm -rf /var/cache/apt-get/*
@@ -31,6 +31,8 @@ RUN ls -la
 
 WORKDIR mozilla-central
 
+RUN ls -la /usr/local
+RUN find / -name 'pango'
 RUN ./mach build
 
 # switch to development user
