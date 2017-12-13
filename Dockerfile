@@ -17,6 +17,7 @@ RUN apt-get install -y \
       libcairo2-dev \
       libpangoft2-1.0-0 \
       libpango1.0-dev \
+      unzip \
       && pip install virtualenv
 
 RUN rm -rf /var/cache/apt-get/*
