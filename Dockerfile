@@ -14,9 +14,9 @@ RUN apt-get update
 RUN apt-get install -y \
       python \
       python-pip \
-      libpangocairo-1.0-0-dev \
-      libpangoft2-1.0-0-dev \
-      libpango1.0-0-dev \
+      libcairo2-dev \
+      libpangoft2-1.0-0 \
+      libpango1.0-dev \
       && pip install virtualenv
 
 RUN rm -rf /var/cache/apt-get/*
