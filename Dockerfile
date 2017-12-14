@@ -2,6 +2,8 @@
 FROM benjspriggs/docker-stretch-dev
 FROM rust
 
+LABEL maintainer="ben@sprico.com"
+
 ENV DEVUSER dev
 ENV PASSWD dev
 ENV SHELL /bin/sh
