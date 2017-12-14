@@ -19,7 +19,7 @@ RUN apt-get install -y \
       libpango1.0-dev \
       unzip \
       zip \
-      llvm-dev \
+      llvm-3.9-dev \
       clang-tidy \
       && pip install virtualenv
 
