@@ -18,6 +18,7 @@ RUN apt-get install -y \
       libpangoft2-1.0-0 \
       libpango1.0-dev \
       unzip \
+      zip \
       && pip install virtualenv
 
 RUN rm -rf /var/cache/apt-get/*
