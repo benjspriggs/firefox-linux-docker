@@ -23,6 +23,7 @@ RUN apt-get install -y \
       zip \
       llvm-3.9 \
       clang-3.9 \
+      autoconf \
       && pip install virtualenv
 
 RUN rm -rf /var/cache/apt-get/*
