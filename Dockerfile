@@ -21,8 +21,8 @@ RUN apt-get install -y \
       libpango1.0-dev \
       unzip \
       zip \
-      llvm-5.0-dev \
-      clang-5.0 \
+      llvm-4.0-dev \
+      clang-4.0 \
       && pip install virtualenv
 
 RUN rm -rf /var/cache/apt-get/*
