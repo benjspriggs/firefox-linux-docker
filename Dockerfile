@@ -27,6 +27,7 @@ RUN apt-get install -y \
       autoconf2.13 \
       build-essential \
       libgtk-3-dev \
+      libgtk2.0-dev \
       && pip install virtualenv
 
 RUN rm -rf /var/cache/apt-get/*
