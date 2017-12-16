@@ -42,8 +42,6 @@ RUN ls -la
 
 WORKDIR mozilla-central
 
-RUN ls -la /usr/local
-RUN find / -name 'pango'
 RUN ./mach build
 
 # switch to development user
