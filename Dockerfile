@@ -30,6 +30,7 @@ RUN apt-get install -y \
       libgtk2.0-dev \
       libgconf2-dev \
       libdbus-glib-1-dev \
+      yasm \
       && pip install virtualenv
 
 RUN rm -rf /var/cache/apt-get/*
