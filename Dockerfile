@@ -25,6 +25,8 @@ RUN apt-get install -y \
       clang-3.9 \
       autoconf \
       autoconf2.13 \
+      build-essential \
+      libgtk-3-dev \
       && pip install virtualenv
 
 RUN rm -rf /var/cache/apt-get/*
