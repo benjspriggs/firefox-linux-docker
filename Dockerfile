@@ -31,6 +31,7 @@ RUN apt-get install -y \
       libgconf2-dev \
       libdbus-glib-1-dev \
       yasm \
+      libpulse-dev \
       && pip install virtualenv
 
 RUN rm -rf /var/cache/apt-get/*
