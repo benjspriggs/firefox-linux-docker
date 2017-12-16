@@ -28,7 +28,7 @@ RUN apt-get install -y \
       build-essential \
       libgtk-3-dev \
       libgtk2.0-dev \
-      gconf2 \
+      libgconf2-dev \
       && pip install virtualenv
 
 RUN rm -rf /var/cache/apt-get/*
