@@ -6,3 +6,4 @@ LABEL maintainer="ben@sprico.com"
 ENV SHELL /bin/bash
 
 RUN ./mach build
+ENTRYPOINT ./mach run
